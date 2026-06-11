@@ -65,4 +65,4 @@ plt.title("VAE\nReconstruction")
 plt.show()
 ```
 
-[](assets/images.png)
+![](https://raw.githubusercontent.com/MrLogarithm/cawl-clustering/refs/heads/main/assets/output.png)
