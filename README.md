@@ -1,8 +1,7 @@
-It is crucial that the model inputs are z-score normalized. If the color channels are not centered around zero, the model will not learn the data.
-
-Cluster these to recover the script inventory: `'vae_mu', 'vae_sigma', 'vae_z'`
-
 ## Basic Usage
+
+As is true for most VAEs, it is crucial that inputs to this model are z-score normalized; if the color channels are not centered around zero, the model will not learn the data.
+
 ```
 import torch
 import matplotlib.pyplot as plt
@@ -43,6 +42,10 @@ images = torch.tensor(images, device=device).float()
 result = pretrained(
     images,
 )
+# Result is a dict containing VAE codes and reconstructed images.
+# To recover a script inventory, we recommend to cluster the VAE
+# codes `vae_mu` and/or `vae_z`.
+
 
 index = 7
 plt.subplot(1,3,1)
